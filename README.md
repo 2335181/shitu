@@ -1,6 +1,11 @@
 # 拾图
 
 一个找原图、存素材的安卓工具箱。免费，无广告，不收集数据，GPL-3.0 开源。
+<img width="1080" height="2400" alt="Screenshot_1795718015" src="https://github.com/user-attachments/assets/d39366dd-340c-46ac-92c7-372eab0ca1a5" />
+<img width="1080" height="2400" alt="Screenshot_1795718007" src="https://github.com/user-attachments/assets/ab4dc161-b027-45d0-a9c7-d478a3f7e350" />
+<img width="1080" height="2400" alt="Screenshot_1795718021" src="https://github.com/user-attachments/assets/609d3034-883d-491b-b9c0-8eeb5c143e31" />
+<img width="1080" height="2400" alt="Screenshot_1795718032" src="https://github.com/user-attachments/assets/7d1214b8-c455-45ba-9e02-a8f75d8d51bd" />
+<img width="1080" height="2400" alt="Screenshot_1795718032" src="https://github.com/user-attachments/assets/d977076d-63fe-4109-aeeb-976d115764ea" />
 
 **当前版本：0.6.0-beta**（测试版，功能可能有问题，欢迎提 Issue）
 
