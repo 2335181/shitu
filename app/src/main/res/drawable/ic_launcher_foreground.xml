@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 拾图图标：一叠照片里「拾起」最上面那张——墨色底片在后，白色相纸微微抬起，画面是蓝色太阳与墨色山。 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- 后面的墨色照片 -->
+    <group android:pivotX="54" android:pivotY="54" android:scaleX="0.84" android:scaleY="0.84">
+    <group android:pivotX="54" android:pivotY="58" android:rotation="-11">
+        <path android:fillColor="#16140F"
+            android:pathData="M39,36 h30 a5,5 0 0 1 5,5 v38 a5,5 0 0 1 -5,5 h-30 a5,5 0 0 1 -5,-5 v-38 a5,5 0 0 1 5,-5z" />
+    </group>
+    <!-- 抬起的相纸 -->
+    <group android:pivotX="56" android:pivotY="52" android:rotation="7">
+        <!-- 投影 -->
+        <path android:fillColor="#3316140F"
+            android:pathData="M42,32 h30 a5,5 0 0 1 5,5 v40 a5,5 0 0 1 -5,5 h-30 a5,5 0 0 1 -5,-5 v-40 a5,5 0 0 1 5,-5z" />
+        <path android:fillColor="#FFFDF8" android:strokeColor="#16140F" android:strokeWidth="2.2"
+            android:pathData="M41,28 h30 a5,5 0 0 1 5,5 v40 a5,5 0 0 1 -5,5 h-30 a5,5 0 0 1 -5,-5 v-40 a5,5 0 0 1 5,-5z" />
+        <!-- 画面 -->
+        <path android:fillColor="#E4EEF7"
+            android:pathData="M42,33 h28 a1.5,1.5 0 0 1 1.5,1.5 v28 h-31 v-28 a1.5,1.5 0 0 1 1.5,-1.5z" />
+        <path android:fillColor="#2F7DB8"
+            android:pathData="M63,37.5 a5,5 0 1 1 0,10 a5,5 0 1 1 0,-10z" />
+        <path android:fillColor="#16140F"
+            android:pathData="M40.5,62.5 L50,49 L56,57 L60.5,52 L71.5,62.5 Z" />
+    </group>
+        <!-- 「拾到了」的闪光 -->
+        <path android:fillColor="#E0563B"
+            android:pathData="M30,30 Q31,36 36,37 Q31,38 30,44 Q29,38 24,37 Q29,36 30,30z" />
+    </group>
+</vector>

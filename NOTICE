@@ -1,0 +1,35 @@
+拾图（Shitu）
+Copyright (C) 2026 拾图作者
+本程序以 GNU General Public License v3.0 发布，全文见 LICENSE。
+
+第三方来源
+==========
+
+移植的代码与思路
+----------------
+- hiyufan/shizhen（求原图），MIT License，commit a893b6e
+  移植到 Kotlin 的部分：B站装扮/收藏集素材字段与域名白名单、抖音 slidesinfo 解析、
+  小红书 __INITIAL_STATE__ 与原图地址、网易云封面接口、抖音直播进房接口。
+  相关文件头部已注明来源。
+- renmu123/biliAPI，GPL-3.0，commit 01cce27
+  B站 Web 扫码登录接口（src/user/login.ts）。
+- notscuffed/RePKG，MIT License
+  Wallpaper Engine PKG / TEX 文件格式（feature/wallpaper/WallpaperEngine.kt 按其格式说明用 Kotlin 重写）。
+
+依赖库
+------
+- youtubedl-android（GPL-3.0），内含 Python、yt-dlp（Unlicense）、FFmpeg（LGPL/GPL）
+- Jetpack Compose、AndroidX、Media3（Apache-2.0）
+- Haze（Apache-2.0）、Coil（Apache-2.0）、OkHttp（Apache-2.0）
+- kotlinx.serialization、kotlinx.coroutines（Apache-2.0）
+- ZXing（Apache-2.0）、jsoup（MIT）、lottie-android（Apache-2.0）
+
+字体
+----
+- 思源宋体 Noto Serif SC（SIL Open Font License 1.1），按 GB2312 子集化
+- Fraunces Italic（SIL Open Font License 1.1），拉丁子集
+
+数据
+----
+- assets/bili_catalog.json：B站收藏集活动 ID 与名称目录（公开信息）
+- 动态 Emoji 运行时读取 Google Noto Animated Emoji（Apache-2.0）的公开目录与文件，不随包分发

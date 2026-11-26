@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 拾图图标背景：米白纸面 + 天蓝、薄荷、蜜桃三团彩雾（与应用首页一致） -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path android:fillColor="#F7F5F1" android:pathData="M0,0h108v108h-108z" />
+    <path android:pathData="M0,0h108v108h-108z">
+        <aapt:attr name="android:fillColor">
+            <gradient android:type="radial" android:centerX="18" android:centerY="16" android:gradientRadius="62">
+                <item android:offset="0" android:color="#FFC9DEF2" />
+                <item android:offset="1" android:color="#00C9DEF2" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path android:pathData="M0,0h108v108h-108z">
+        <aapt:attr name="android:fillColor">
+            <gradient android:type="radial" android:centerX="96" android:centerY="40" android:gradientRadius="56">
+                <item android:offset="0" android:color="#FFCDE9DC" />
+                <item android:offset="1" android:color="#00CDE9DC" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path android:pathData="M0,0h108v108h-108z">
+        <aapt:attr name="android:fillColor">
+            <gradient android:type="radial" android:centerX="40" android:centerY="104" android:gradientRadius="60">
+                <item android:offset="0" android:color="#FFF3D7C2" />
+                <item android:offset="1" android:color="#00F3D7C2" />
+            </gradient>
+        </aapt:attr>
+    </path>
+</vector>

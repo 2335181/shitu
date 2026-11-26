@@ -1,0 +1,31 @@
+# Gradle / 构建产物
+.gradle/
+.gradle-user-home/
+.kotlin/
+build/
+*/build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# 本机配置与密钥（不得提交）
+local.properties
+keystore.properties
+*.jks
+*.keystore
+.android-sdk/
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+
+# 工人任务日志
+docs/_briefs/*.log
+
+/dist/
+
+# 收款码原图（应用里用的是打码后的版本）与内部任务记录
+/微信.jpg
+/支付宝.jpg
+docs/_briefs/

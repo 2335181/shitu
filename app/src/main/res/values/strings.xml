@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">拾图</string>
+
+    <!-- 底部导航 -->
+    <string name="tab_search">识图</string>
+    <string name="tab_tools">工具</string>
+    <string name="tab_workspace">最近</string>
+    <string name="tab_me">我的</string>
+
+    <!-- 识图 -->
+    <string name="search_title">识图</string>
+    <string name="search_subtitle">从一张图，找到它的出处。</string>
+    <string name="search_body">选择一张图片，之后可以同时交给多个识图引擎。图片只在本机处理，上传前会先压缩。</string>
+    <string name="search_pick_image">选择图片</string>
+    <string name="search_coming_soon">选图与识图引擎将在 P2 接入。</string>
+    <string name="search_preview_label">等待选择图片</string>
+
+    <!-- 工具 -->
+    <string name="tools_title">工具</string>
+    <string name="tools_subtitle">按类目挑选一个素材处理功能。</string>
+    <string name="tools_coming_soon">即将推出</string>
+    <string name="tools_coming_soon_snackbar">「%1$s」即将推出</string>
+
+    <!-- 工作台 -->
+    <string name="workspace_title">工作台</string>
+    <string name="workspace_subtitle">上次使用的工具与输入会保存在这里。</string>
+    <string name="workspace_recent">最近使用</string>
+    <string name="workspace_empty_title">还没有打开过工具</string>
+    <string name="workspace_empty_desc">去工具页选择一个功能。打开后，输入与结果会持久化保存，重启应用也能恢复。</string>
+    <string name="workspace_go_tools">去工具页</string>
+    <string name="workspace_tool_missing">当前工具已不可用</string>
+    <string name="workspace_tool_missing_desc">这个工具可能已被移除，请从工具页重新选择一个功能。</string>
+    <string name="workspace_loading">正在恢复上次的状态…</string>
+    <string name="workspace_recent_unavailable">未知工具</string>
+
+    <!-- B站占位工具 -->
+    <string name="bili_collection_name">B站收藏集下载</string>
+    <string name="bili_suit_name">B站装扮下载</string>
+    <string name="bili_collection_hint">输入活动名称、act_id 或详情页链接</string>
+    <string name="bili_suit_hint">输入装扮 ID 或详情页链接</string>
+    <string name="bili_query">查询</string>
+    <string name="bili_results_title">查询结果</string>
+    <string name="bili_results_count">共 %1$d 条示例数据</string>
+    <string name="bili_results_empty">输入关键词后点击「查询」，结果会保存在这里。</string>
+    <string name="bili_result_line">示例结果 %1$d · ID %2$s</string>
+    <string name="bili_placeholder_note">P1 仅提供可持久化的交互占位，真实接口与下载将在 P2 接入。</string>
+
+    <!-- 我的 -->
+    <string name="me_title">我的</string>
+    <string name="me_subtitle">关于拾图、外观与本地设置。</string>
+    <string name="me_section_about">关于</string>
+    <string name="me_section_appearance">外观</string>
+    <string name="me_section_general">通用</string>
+    <string name="me_section_developer">开发者选项</string>
+    <string name="me_version">版本信息</string>
+    <string name="me_version_value">拾图 %1$s · P1 骨架</string>
+    <string name="me_check_update">检查更新</string>
+    <string name="me_check_update_value">后续版本</string>
+    <string name="me_ytdlp_update">yt-dlp 更新</string>
+    <string name="me_ytdlp_value">未安装</string>
+    <string name="me_theme_mode">深浅模式</string>
+    <string name="me_theme_system">跟随系统</string>
+    <string name="me_theme_light">浅色</string>
+    <string name="me_theme_dark">深色</string>
+    <string name="me_color_source">配色来源</string>
+    <string name="me_color_dynamic">跟随壁纸</string>
+    <string name="me_color_brand">品牌色</string>
+    <string name="me_download_location">下载位置</string>
+    <string name="me_download_location_value">系统相册 / 拾图</string>
+    <string name="me_account">账号与登录</string>
+    <string name="me_account_value">未登录</string>
+    <string name="me_clear_cache">清理缓存</string>
+    <string name="me_clear_cache_value">0 B</string>
+    <string name="me_open_source">开源许可</string>
+    <string name="me_open_source_value">查看</string>
+    <string name="me_disclaimer">免责声明</string>
+    <string name="me_disclaimer_value">查看</string>
+    <string name="me_sponsor">赞助</string>
+    <string name="me_sponsor_value">支持开发者</string>
+    <string name="me_network_log">网络日志</string>
+    <string name="me_endpoint_override">接口地址覆盖</string>
+    <string name="me_export_debug">导出调试信息</string>
+    <string name="me_placeholder_feature">该功能将在后续版本开放</string>
+    <string name="me_developer_unlocked">已开启开发者选项</string>
+    <string name="me_developer_progress">再连点 %1$d 次开启开发者选项</string>
+    <string name="me_developer_already">开发者选项已开启</string>
+    <string name="me_placeholder_value">后续版本</string>
+
+    <!-- 工具目录类目 -->
+    <string name="category_link_parse">链接解析</string>
+    <string name="category_bili_assets">B站素材</string>
+    <string name="category_live">直播</string>
+    <string name="category_music_cover">音乐封面</string>
+    <string name="category_game_assets">游戏素材</string>
+    <string name="category_illustration">插画</string>
+    <string name="category_stickers">贴纸表情</string>
+    <string name="category_file_extract">文件提取</string>
+    <string name="category_animation_convert">动画转换</string>
+    <string name="category_convert">转换</string>
+
+    <!-- 工具目录条目 -->
+    <string name="tool_douyin">抖音</string>
+    <string name="tool_douyin_desc">解析抖音公开分享链接中的视频与图片</string>
+    <string name="tool_xiaohongshu">小红书</string>
+    <string name="tool_xiaohongshu_desc">解析小红书笔记中的原图与视频</string>
+    <string name="tool_kuaishou">快手</string>
+    <string name="tool_kuaishou_desc">解析快手公开作品链接</string>
+    <string name="tool_bilibili">哔哩哔哩</string>
+    <string name="tool_bilibili_desc">解析B站视频、番剧与动态</string>
+    <string name="tool_youtube">YouTube</string>
+    <string name="tool_youtube_desc">通过通用解析器下载公开视频</string>
+    <string name="tool_x">X（Twitter）</string>
+    <string name="tool_x_desc">解析 X 公开帖子的图片与视频</string>
+    <string name="tool_instagram">Instagram</string>
+    <string name="tool_instagram_desc">解析 Instagram 公开帖子的媒体</string>
+    <string name="tool_threads">Threads</string>
+    <string name="tool_threads_desc">解析 Threads 公开帖子的媒体</string>
+    <string name="tool_tiktok">TikTok</string>
+    <string name="tool_tiktok_desc">解析 TikTok 公开视频</string>
+    <string name="tool_wechat">公众号</string>
+    <string name="tool_wechat_desc">解析公众号文章中的图片</string>
+    <string name="tool_telegram">Telegram</string>
+    <string name="tool_telegram_desc">解析 Telegram 公开帖子的媒体</string>
+    <string name="tool_bili_collection">B站收藏集下载</string>
+    <string name="tool_bili_collection_desc">按活动与卡池浏览收藏集图片、表情与头像框</string>
+    <string name="tool_bili_suit">B站装扮下载</string>
+    <string name="tool_bili_suit_desc">按装扮 ID 浏览壁纸、背景与挂件素材</string>
+    <string name="tool_douyin_live">抖音直播流</string>
+    <string name="tool_douyin_live_desc">提取抖音直播的流地址，仅展示不录制</string>
+    <string name="tool_qq_music">QQ 音乐</string>
+    <string name="tool_qq_music_desc">获取歌曲封面与动态封面</string>
+    <string name="tool_netease_music">网易云音乐</string>
+    <string name="tool_netease_music_desc">获取歌曲封面与动态封面</string>
+    <string name="tool_apple_music">Apple Music</string>
+    <string name="tool_apple_music_desc">获取专辑封面</string>
+    <string name="tool_huawei_music">华为音乐</string>
+    <string name="tool_huawei_music_desc">获取歌曲封面</string>
+    <string name="tool_steam">Steam 素材</string>
+    <string name="tool_steam_desc">动态头像、头像框与个人背景</string>
+    <string name="tool_hoyoplay">HoYoPlay 壁纸</string>
+    <string name="tool_hoyoplay_desc">获取 HoYoPlay 游戏壁纸</string>
+    <string name="tool_wuthering_waves">鸣潮壁纸</string>
+    <string name="tool_wuthering_waves_desc">获取鸣潮官方壁纸</string>
+    <string name="tool_pixiv">Pixiv</string>
+    <string name="tool_pixiv_desc">插画、漫画、小说、Ugoira 与 Sketch</string>
+    <string name="tool_pinterest">Pinterest</string>
+    <string name="tool_pinterest_desc">解析公开 Pin 的图片</string>
+    <string name="tool_miyoushe">米游社</string>
+    <string name="tool_miyoushe_desc">解析米游社公开帖子的图片</string>
+    <string name="tool_telegram_stickers">Telegram 贴纸</string>
+    <string name="tool_telegram_stickers_desc">下载 Telegram 贴纸包</string>
+    <string name="tool_discord_stickers">Discord 贴纸</string>
+    <string name="tool_discord_stickers_desc">下载 Discord 贴纸与表情</string>
+    <string name="tool_line_stickers">LINE 贴纸</string>
+    <string name="tool_line_stickers_desc">下载 LINE 贴纸包</string>
+    <string name="tool_signal_stickers">Signal 贴纸</string>
+    <string name="tool_signal_stickers_desc">下载 Signal 贴纸包</string>
+    <string name="tool_seventv">7TV / BTTV / FFZ</string>
+    <string name="tool_seventv_desc">下载第三方表情包</string>
+    <string name="tool_noto_emoji">Noto 动态 Emoji</string>
+    <string name="tool_noto_emoji_desc">下载 Noto 动态表情</string>
+    <string name="tool_wallpaper_engine">Wallpaper Engine</string>
+    <string name="tool_wallpaper_engine_desc">从 PKG / TEX 文件提取壁纸素材</string>
+    <string name="tool_svga">SVGA</string>
+    <string name="tool_svga_desc">播放并转换 SVGA（含B站 .bin）</string>
+    <string name="tool_pag">PAG</string>
+    <string name="tool_pag_desc">渲染并导出 PAG 动画</string>
+    <string name="tool_vap">VAP</string>
+    <string name="tool_vap_desc">渲染并导出 VAP 动画</string>
+    <string name="tool_spine">Spine</string>
+    <string name="tool_spine_desc">渲染并导出 Spine 动画</string>
+    <string name="tool_video_to_gif">视频转 GIF</string>
+    <string name="tool_video_to_gif_desc">本地视频转换为 GIF</string>
+    <string name="tool_live_photo">实况照片</string>
+    <string name="tool_live_photo_desc">视频转换为 iPhone 实况照片</string>
+    <string name="tool_motion_photo">动态照片</string>
+    <string name="tool_motion_photo_desc">视频转换为安卓动态照片</string>
+    <string name="tool_local_video">本地视频处理</string>
+    <string name="tool_local_video_desc">选择本地视频并上传处理</string>
+</resources>
