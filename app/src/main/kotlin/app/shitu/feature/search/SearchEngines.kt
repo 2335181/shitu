@@ -77,7 +77,11 @@ sealed interface EngineResult {
  * 各识图引擎的适配器。接口型返回结果列表；网页型返回要打开的结果页地址。
  * 网页型里只有 Google Lens 与 Yandex 支持直接上传；其余引擎用 Yandex 返回的图片公开地址做「按网址搜图」。
  */
-class SearchEngines(private val sauceNaoKey: () -> String, private val gelbooruAuth: () -> String = { "" }) {
+class SearchEngines(
+    private val sauceNaoKey: () -> String,
+    private val gelbooruAuth: () -> String = { "" },
+    private val danbooruAuth: () -> String = { "" },
+) {
     private val jpeg = "image/jpeg".toMediaType()
 
     /** 给按网址搜图的引擎用：上传一次 Yandex 拿到公开图片地址，多引擎复用。 */
@@ -288,9 +292,12 @@ class SearchEngines(private val sauceNaoKey: () -> String, private val gelbooruA
         val key = sauceNaoKey()
         val fromIqdb = async { runCatching { iqdbHits(image) } }
         val fromSauce = async { if (key.isBlank()) Result.success(emptyList()) else runCatching { sauceRaw(image, key) } }
+        val fromDan = async { if (site == Booru.DANBOORU) runCatching { danbooruIqdb(image) } else Result.success(emptyMap()) }
         val iq = fromIqdb.await()
         val sn = fromSauce.await()
         val found = linkedMapOf<String, Pair<Float, String>>() // id -> (相似度, 缩略图)
+        val dan = fromDan.await()
+        dan.getOrNull().orEmpty().forEach { (id, v) -> found[id] = v }
         iq.getOrNull().orEmpty().forEach { h ->
             val id = (listOf(h.url) + h.alt).firstNotNullOfOrNull { site.idFrom(it) } ?: return@forEach
             val sim = h.similarity ?: 0f
@@ -306,6 +313,7 @@ class SearchEngines(private val sauceNaoKey: () -> String, private val gelbooruA
             if ((found[id]?.first ?: -1f) < sim) found[id] = sim to o.obj("header")?.str("thumbnail").orEmpty()
         }
         if (found.isEmpty()) {
+            dan.exceptionOrNull()?.let { if (it is UserFacingException) throw it }
             val err = iq.exceptionOrNull() ?: sn.exceptionOrNull()
             if (err != null && iq.isFailure && (key.isBlank() || sn.isFailure)) throw err
             return@coroutineScope EngineResult.Hits(emptyList())
@@ -314,6 +322,34 @@ class SearchEngines(private val sauceNaoKey: () -> String, private val gelbooruA
             async { site.hit(id, v.first, v.second, gelbooruAuth()) }
         }.map { it.await() }
         EngineResult.Hits(hits)
+    }
+
+    /**
+     * Danbooru 自己的以图搜图（POST /iqdb_queries.json），需要登录：用户名 + API Key（个人资料页 → API Key 生成）。
+     * 没填返回空，召回仍走 IQDB / SauceNAO。返回 帖子编号 -> (相似度, 缩略图)。
+     */
+    private suspend fun danbooruIqdb(image: ByteArray): Map<String, Pair<Float, String>> {
+        val auth = danbooruAuth().trim()
+        val user = auth.substringBefore(':').trim()
+        val key = auth.substringAfter(':', "").trim()
+        if (user.isEmpty() || key.isEmpty()) return emptyMap()
+        val req = Request.Builder().url("https://danbooru.donmai.us/iqdb_queries.json?limit=8")
+            .post(multipart("search[file]", image))
+            .header("User-Agent", "shitu/0.6 (Android)") // 浏览器 UA 会被拦到验证页
+            .header("Authorization", okhttp3.Credentials.basic(user, key))
+            .build()
+        val (code, body) = Http.client.newCall(req).await().use { it.code to it.body.string() }
+        if (code == 401 || code == 403) {
+            DevLog.warn("识图·Danbooru", "以图搜图鉴权失败 $code")
+            throw UserFacingException("Danbooru 用户名或 API Key 不对（$code），去「我的 → 识图引擎」检查")
+        }
+        val arr = parse(body, "Danbooru").arr("items")
+        return arr.mapNotNull { el ->
+            val o = el as? JsonObject ?: return@mapNotNull null
+            val id = o.str("post_id") ?: return@mapNotNull null
+            val score = o.str("score")?.toFloatOrNull() ?: 0f
+            id to (score to (o.obj("post")?.str("preview_file_url").orEmpty()))
+        }.toMap()
     }
 
     private val iqdbCookies = java.util.concurrent.CopyOnWriteArrayList<okhttp3.Cookie>()

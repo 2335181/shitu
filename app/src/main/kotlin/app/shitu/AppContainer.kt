@@ -51,7 +51,7 @@ class AppContainer(context: Context) {
     }
 
     val searchSession by lazy {
-        app.shitu.ui.search.SearchSession(app.shitu.feature.search.SearchEngines({ settings.value.sauceNaoKey }, { settings.value.gelbooruAuth }))
+        app.shitu.ui.search.SearchSession(app.shitu.feature.search.SearchEngines({ settings.value.sauceNaoKey }, { settings.value.gelbooruAuth }, { settings.value.danbooruAuth }))
     }
 
     private companion object {

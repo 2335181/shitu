@@ -33,6 +33,7 @@ class SettingsRepository(
                 } ?: AppSettings.DEFAULT_ENGINES,
                 sauceNaoKey = p[SAUCENAO_KEY].orEmpty(),
                 gelbooruAuth = p[GELBOORU_AUTH].orEmpty(),
+                danbooruAuth = p[DANBOORU_AUTH].orEmpty(),
                 imageMaxSide = p[IMAGE_MAX_SIDE] ?: 2048,
                 ytDlpChannel = enumOr(p[YTDLP_CHANNEL], YtDlpChannel.STABLE),
                 telegramBotToken = p[TG_TOKEN].orEmpty(),
@@ -48,6 +49,7 @@ class SettingsRepository(
     suspend fun setClipboardDetect(value: Boolean) = edit { it[CLIPBOARD] = value }
     suspend fun setSearchEngines(ids: List<String>) = edit { it[ENGINES] = ids.joinToString(","); it[ENGINES_V4] = true }
     suspend fun setGelbooruAuth(v: String) = edit { it[GELBOORU_AUTH] = v.trim() }
+    suspend fun setDanbooruAuth(v: String) = edit { it[DANBOORU_AUTH] = v.trim() }
     suspend fun setSauceNaoKey(key: String) = edit { it[SAUCENAO_KEY] = key.trim() }
     suspend fun setImageMaxSide(value: Int) = edit { it[IMAGE_MAX_SIDE] = value }
     suspend fun setYtDlpChannel(channel: YtDlpChannel) = edit { it[YTDLP_CHANNEL] = channel.name }
@@ -73,6 +75,7 @@ class SettingsRepository(
         val BOORU_IDS = listOf("danbooru", "yandere", "konachan", "gelbooru", "sankaku")
         val SAUCENAO_KEY = stringPreferencesKey("saucenao_key")
         val GELBOORU_AUTH = stringPreferencesKey("gelbooru_auth")
+        val DANBOORU_AUTH = stringPreferencesKey("danbooru_auth")
         val IMAGE_MAX_SIDE = intPreferencesKey("image_max_side")
         val YTDLP_CHANNEL = stringPreferencesKey("ytdlp_channel")
         val TG_TOKEN = stringPreferencesKey("telegram_bot_token")

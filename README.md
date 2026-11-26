@@ -18,11 +18,35 @@
 
 ## 使用提示
 - 在中国大陆不开代理时，能用的识图引擎是 SauceNAO、trace.moe、IQDB、百度和各图站。其他引擎需要开代理。
-- SauceNAO 需要 API Key，在「我的 → 识图引擎」里填写。在同一页还可以选填 Gelbooru 凭证，填了之后 Gelbooru 的结果会显示标签和原图尺寸。
+- SauceNAO 需要 API Key，在「我的 → 识图引擎」里填写。同一页还可以选填图站账号：
+  - Danbooru「用户名:API Key」：填了之后用 Danbooru 自己的以图搜图，收录更全；
+  - Gelbooru 凭证：填了之后结果会显示标签和原图尺寸。
 - Telegram 贴纸需要先在 @BotFather 免费创建一个机器人，把它给的 Token 填进应用。
 
 ## 开发
 构建方法、代码结构和各模块接口见 [docs/开发维护.md](docs/开发维护.md)。
 
+## 致谢与借鉴的开源项目
+本项目借鉴或移植了下列开源项目的代码与思路，感谢原作者：
+
+| 项目 | 许可 | 借鉴内容 |
+|---|---|---|
+| [hiyufan/shizhen](https://github.com/hiyufan/shizhen)（求原图） | MIT | B站装扮/收藏集字段、抖音图集与直播、小红书原图、网易云封面等解析思路 |
+| [renmu123/biliAPI](https://github.com/renmu123/biliAPI) | GPL-3.0 | B站扫码登录接口 |
+| [notscuffed/RePKG](https://github.com/notscuffed/RePKG) | MIT | Wallpaper Engine PKG / TEX 文件格式 |
+| [yausername/youtubedl-android](https://github.com/yausername/youtubedl-android) | GPL-3.0 | 内置 yt-dlp、Python、FFmpeg |
+| [yt-dlp](https://github.com/yt-dlp/yt-dlp) | Unlicense | 通用视频下载 |
+| [FFmpeg](https://ffmpeg.org/) | LGPL / GPL | 动图、视频转换 |
+| [chrisbanes/haze](https://github.com/chrisbanes/haze) | Apache-2.0 | 毛玻璃导航栏与悬浮按钮 |
+| [Coil](https://github.com/coil-kt/coil)、[OkHttp](https://github.com/square/okhttp)、[jsoup](https://github.com/jhy/jsoup)、[ZXing](https://github.com/zxing/zxing)、[lottie-android](https://github.com/airbnb/lottie-android) | Apache-2.0 / MIT | 图片加载、网络、网页解析、二维码、Lottie 渲染 |
+| Jetpack Compose、AndroidX、Media3、kotlinx | Apache-2.0 | 界面与基础库 |
+| 思源宋体 Noto Serif SC、Fraunces | OFL-1.1 | 字体 |
+| Google Noto Animated Emoji | Apache-2.0 | 动态 Emoji（运行时读取，不随包分发） |
+
+完整的许可说明见 [NOTICE](NOTICE)。
+
+## 作者
+- **qiulvan9011**（主要贡献者）
+
 ## 许可
-GPL-3.0。第三方组件的来源和许可证见 [NOTICE](NOTICE)。
+GPL-3.0。

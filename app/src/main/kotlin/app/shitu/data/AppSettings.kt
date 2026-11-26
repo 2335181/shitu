@@ -25,6 +25,8 @@ data class AppSettings(
     val sauceNaoKey: String = "",
     /** Gelbooru 账号页给的「&api_key=…&user_id=…」整段。 */
     val gelbooruAuth: String = "",
+    /** Danbooru「用户名:API Key」，填了就用 Danbooru 自己的以图搜图。 */
+    val danbooruAuth: String = "",
     val imageMaxSide: Int = 2048,
     val ytDlpChannel: YtDlpChannel = YtDlpChannel.STABLE,
     /** Telegram 机器人 Token，只用于读取贴纸包（Bot API getStickerSet）。 */

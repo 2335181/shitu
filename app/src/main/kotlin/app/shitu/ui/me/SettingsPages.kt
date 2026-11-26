@@ -174,6 +174,8 @@ fun EnginesPage(padding: PaddingValues) {
     LaunchedEffect(Unit) { snapshotFlow { key.text.toString() }.collect { repo.setSauceNaoKey(it) } }
     val gel = rememberTextFieldState(settings.gelbooruAuth)
     LaunchedEffect(Unit) { snapshotFlow { gel.text.toString() }.collect { repo.setGelbooruAuth(it) } }
+    val dan = rememberTextFieldState(settings.danbooruAuth)
+    LaunchedEffect(Unit) { snapshotFlow { dan.text.toString() }.collect { repo.setDanbooruAuth(it) } }
 
     fun save(list: List<Engine>) = scope.launch { repo.setSearchEngines(list.map { it.id }) }
 
@@ -204,9 +206,17 @@ fun EnginesPage(padding: PaddingValues) {
             }
             SectionHeader("图站账号（可选）")
             PaperCard(Modifier.fillMaxWidth()) {
-                Text("图站引擎先用 IQDB / SauceNAO 找到帖子，再查各站公开接口补标签和原图尺寸。Danbooru、Yande.re、Konachan 不用账号；Gelbooru 的接口要账号凭证，不填也能搜到链接，只是不显示标签。", color = MaterialTheme.colorScheme.onSurfaceVariant)
+                Text("图站引擎先用 IQDB / SauceNAO 找到帖子，再查各站公开接口补标签和原图尺寸。账号都是选填。", color = MaterialTheme.colorScheme.onSurfaceVariant)
                 Gap(12.dp)
+                OutlinedSecureTextField(state = dan, label = { Text("Danbooru：用户名:API Key") }, modifier = Modifier.fillMaxWidth())
+                Gap(6.dp)
+                Text("填了之后 Danbooru 引擎会额外用 Danbooru 自己的以图搜图，收录更全。API Key 在 Danbooru 个人资料页 → API Key 里生成，勾选 iqdb_queries 权限。", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.outline)
+                Gap(10.dp)
+                SoftButton("去 Danbooru 生成 Key", { context.openUrl("https://danbooru.donmai.us/profile") }, compact = true)
+                Gap(16.dp)
                 OutlinedSecureTextField(state = gel, label = { Text("Gelbooru：&api_key=…&user_id=…") }, modifier = Modifier.fillMaxWidth())
+                Gap(6.dp)
+                Text("Gelbooru 的接口要账号凭证，不填也能搜到链接，只是不显示标签。", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.outline)
                 Gap(10.dp)
                 SoftButton("去 Gelbooru 账号页复制", { context.openUrl("https://gelbooru.com/index.php?page=account&s=options") }, compact = true)
                 Gap(10.dp)
