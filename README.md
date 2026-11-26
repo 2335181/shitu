@@ -46,7 +46,7 @@
 完整的许可说明见 [NOTICE](NOTICE)。
 
 ## 作者
-- **qiulvan9011**（主要贡献者）
-
+- qiulvan
+bilibili：小眠https://space.bilibili.com/481490124
 ## 许可
 GPL-3.0。
