@@ -1,34 +1,31 @@
-# 拾图
+拾图
 
 一个找原图、存素材的安卓工具箱。免费，无广告，不收集数据，GPL-3.0 开源。
-<img width="1080" height="2400" alt="Screenshot_1795718015" src="https://github.com/user-attachments/assets/d39366dd-340c-46ac-92c7-372eab0ca1a5" />
-<img width="1080" height="2400" alt="Screenshot_1795718007" src="https://github.com/user-attachments/assets/ab4dc161-b027-45d0-a9c7-d478a3f7e350" />
-<img width="1080" height="2400" alt="Screenshot_1795718021" src="https://github.com/user-attachments/assets/609d3034-883d-491b-b9c0-8eeb5c143e31" />
-<img width="1080" height="2400" alt="Screenshot_1795718032" src="https://github.com/user-attachments/assets/7d1214b8-c455-45ba-9e02-a8f75d8d51bd" />
-<img width="1080" height="2400" alt="Screenshot_1795718032" src="https://github.com/user-attachments/assets/d977076d-63fe-4109-aeeb-976d115764ea" />
-
-**当前版本：0.6.0-beta**（测试版，功能可能有问题，欢迎提 Issue）
+w当前版本：0.6.0-beta**（测试版，功能可能有问题，欢迎提 Issue）
+<img width="1920" height="1920" alt="e0672cf5879b670835812324c90d501c" src="https://github.com/user-attachments/assets/f1ba943c-8c3b-4117-897f-33c2e8f68e75" />
+<img width="1920" height="1920" alt="5e3a86afaf7cc020b8a9a8ad834e291c" src="https://github.com/user-attachments/assets/144399ed-e44a-46e5-a875-0d0bdf9a5b82" />
+<img width="864" height="1920" alt="d1b462ecc89f58ecd708a7f0aa84e331" src="https://github.com/user-attachments/assets/92bc05e8-99e9-4531-9661-682074dd374c" />
 
 ## 功能
-- **识图**：同时用多个引擎搜图。
+- 识图：同时用多个引擎搜图。
   - 应用内直接出结果：SauceNAO、trace.moe、IQDB、Danbooru、Yande.re、Konachan、Gelbooru、Sankaku；
   - 在浏览器打开结果页：Google Lens、Yandex、Bing、ascii2d、百度、搜狗、TinEye。
-- **链接解析**：
+- 链接解析：
   - 抖音、小红书、Pixiv（含动图转 GIF）、Pinterest 取无水印视频和原图；
   - YouTube、X、B站等交给内置的 yt-dlp。
-- **B站收藏集与装扮**：卡片图片和视频、静态与动态表情、头像框、装扮背景。
-- **直播流**：获取抖音和 B站直播间的 FLV / HLS 地址。
-- **更多工具**：视频转 GIF、转实况（Motion Photo）、Telegram 贴纸包、Noto 动态 Emoji、Wallpaper Engine 素材提取、音乐封面。
+- B站收藏集与装扮：卡片图片和视频、静态与动态表情、头像框、装扮背景。
+- 直播流：获取抖音和 B站直播间的 FLV / HLS 地址。
+- 更多工具：视频转 GIF、转实况（Motion Photo）、Telegram 贴纸包、Noto 动态 Emoji、Wallpaper Engine 素材提取、音乐封面。
 - 下载的文件默认保存在 `Download/拾图/图片` 和 `Download/拾图/视频`。
 
-## 使用提示
+使用提示
 - 在中国大陆不开代理时，能用的识图引擎是 SauceNAO、trace.moe、IQDB、百度和各图站。其他引擎需要开代理。
 - SauceNAO 需要 API Key，在「我的 → 识图引擎」里填写。同一页还可以选填图站账号：
   - Danbooru「用户名:API Key」：填了之后用 Danbooru 自己的以图搜图，收录更全；
   - Gelbooru 凭证：填了之后结果会显示标签和原图尺寸。
 - Telegram 贴纸需要先在 @BotFather 免费创建一个机器人，把它给的 Token 填进应用。
 
-## 开发
+开发
 构建方法、代码结构和各模块接口见 [docs/开发维护.md](docs/开发维护.md)。
 
 ## 致谢与借鉴的开源项目
